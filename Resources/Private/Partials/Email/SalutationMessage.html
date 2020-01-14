@@ -1,0 +1,4 @@
+<f:if condition="{0:data.gender,1:data.fullname}!={0:0,1:0}">
+<f:then><f:translate key="email.salutation.format.{data.gender}"  default="Dear" /> {data.fullname}</f:then>
+<f:else><f:translate key="email.salutation.subscriber" default="Dear Subscriber" /></f:else>
+</f:if><br />

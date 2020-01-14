@@ -1,0 +1,14 @@
+<f:form.errors>{error.propertyName} {errors}
+    <f:if condition="{error.propertyName}">            
+            <f:for each="{error.errors}" as="errorDetail">            
+                <f:if condition="{0:errorDetail.propertyName} == {0:'{fieldName}'}">
+                    <f:for each="{errorDetail.errors}" as="errorDetailParts">        
+                        <div class="error">                
+                            <f:translate key="{errorDetail.propertyName}.{errorDetailParts.code}" />
+                            <!--  {errorDetail.propertyName}.{errorDetailParts.code}   {errorDetailParts.message}-->
+                        </div>
+                    </f:for>
+                </f:if>
+            </f:for>
+    </f:if>
+</f:form.errors>

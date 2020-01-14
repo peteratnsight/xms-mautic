@@ -1,0 +1,23 @@
+{namespace xeb=Xms\XmsSystemextension\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+<f:render partial="FormErrors" arguments="{object:Subscription}" />
+<f:form id="xmsSubscription" action="submit" name="xmsSubscription" objectName="subscription" object="{Subscription}">
+	
+	<div class="panel panel-default panel-personaldata">
+	  <div class="panel-heading"><f:translate key="subscription_form.header.personal_data" default="Personal Data" /></div>
+		  <div class="panel-body">
+    			<f:render partial="Form/PersonalData" arguments="{ data:data }" />
+		  </div>
+	</div>
+	
+	<f:render partial="Form/NewsletterSubscription" section="subscribe" arguments="{ data:data }" />
+
+	<f:render partial="Form/FooterData" section="subscribe" arguments="{ data:data }" />
+
+	<div class="form-group">
+		<input id="form-submit" type="submit" name="submit" value="{f:translate(key:'subscription_form.submit',default:'Submit')}" class="btn btn-lg btn-primary" agen="subscribeData" gaq="submit" gaq-type="submit" />
+	</div>
+
+</f:form></f:section>

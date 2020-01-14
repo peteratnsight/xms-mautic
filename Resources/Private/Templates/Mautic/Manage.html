@@ -1,0 +1,53 @@
+{namespace xeb=Xms\XmsSystemextension\ViewHelpers}
+<f:layout name="Default" />
+
+<f:section name="main">
+
+<f:render partial="FormErrors" arguments="{object:Subscription}" />
+
+<f:form id="xmsSubscription" class="ajaxform" actionUri="http://www.kongressmedia.de/mautic/m/submit/newsletter.json" name="xmsSubscription" objectName="subscription" object="{Subscription}" additionalParams="{type:6771}">
+
+	<div class="panel panel-default panel-personaldata">
+	  <div class="panel-heading"><f:translate key="subscription_form.header.personal_data" default="Personal Data" /></div>
+		  <div class="panel-body">
+    			<f:render partial="Form/PersonalData" arguments="{ data:data }" />
+		  </div>
+	</div>
+	
+	<f:render partial="Form/NewsletterSubscription" section="manage" arguments="{ data:data }" />
+
+	<f:render partial="Form/FooterData" section="manage" arguments="{ data:data }" />
+
+
+	<div class="form-group">
+		<input id="form-submit" type="submit" name="submit" value="{f:translate(key:'submit',default:'Submit')}" class="btn btn-lg btn-primary" agen="subscribeData" gaq="submit" gaq-type="submit" />
+	</div>
+
+</f:form></f:section>
+
+<f:section name="main-error">
+
+<f:translate key="subscription_form.note.no_hash_identification" default="We could not identify your account. Please give us your credentials." />
+
+<f:form id="xmsSubscription" class="ajaxform" actionUri="http://www.kongressmedia.de/mautic/m/identify/newsletter.json" name="xmsSubscription" objectName="subscription" object="{Subscription}" additionalParams="{type:6771}">
+
+	<div class="form-group">
+	<label for="lastname"><f:translate key="subscription_form.field.lastname" default="Lastname" /></label>
+	<f:form.textfield id="lastname" class="form-control field field-lastname field-required" required="1" property="lastname" value="{data.lastname}"/>
+	</div>
+
+	<div class="form-group">
+	<label for="email"><f:translate key="subscription_form.field.email" default="Email" /></label>
+	<f:form.textfield id="email" class="form-control field field-email field-required" required="1" property="email" value="{data.email}"/>
+	<f:render partial="FieldError" arguments="{ fieldName: 'email' }" />	
+	</div>
+
+	<f:render partial="Form/FooterData" section="identify" arguments="{ data:data }" />
+
+	<div class="form-group">
+		<input id="form-submit" type="submit" name="submit" value="{f:translate(key:'submit',default:'Submit')}" class="btn btn-lg btn-primary" agen="subscribeData" gaq="submit" gaq-type="submit" />
+	</div>
+
+</f:form>
+
+</f:section>

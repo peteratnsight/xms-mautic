@@ -1,0 +1,16 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+<script type="text/javascript" src="{mautic_url}/formext/generate.js?id={form_id}&lang={lang}&tags={tags}&subscribetolist={subscribetolist}&refererurl={refererurl}&project={project}"></script>
+<f:if condition="{googleId}"><script async src="https://www.googletagmanager.com/gtag/js?id={googleId}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '{googleId}');
+</script>
+</f:if></f:section>
+
+
+<f:section name="video"><video height="{height}" width="[width}" data-form-id="{form_id}" data-gate-time="{gate_time}"><source type="video/youtube" src="{asset_url}" /></video></f:section>

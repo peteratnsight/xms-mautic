@@ -1,0 +1,25 @@
+{namespace xeb=Xms\XmsSystemextension\ViewHelpers}
+
+<f:layout name="Backend"/>
+
+
+
+ 
+<f:section name="main">
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Method Functions</div>
+  <!-- List group -->
+  <ul class="list-group">
+    <li class="list-group-item"><f:link.action action="integrateSubscribersFromBooking">Get Data From XMS EventBooking</f:link.action></li>
+    <li class="list-group-item"><f:link.action action="updateSubscribersFromBooking" arguments="{method:'options'}">Add Booking Options & Addons</f:link.action></li>
+</li>
+  </ul>
+</div>
+
+
+<hr />
+ Count: {count}<br />
+ {xeb:debug(data:data)}
+</f:section>

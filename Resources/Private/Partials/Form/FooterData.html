@@ -1,0 +1,23 @@
+<f:section name="subscribe">
+	<f:form.hidden id="eventContext" property="eventContext" value="{data.defaults.eventContext}" />
+	<f:form.hidden id="mauticContext" property="mauticContext" value="{data.defaults.mauticContext}" />
+	<f:form.hidden id="requestReferrer" name="requestReferrer" value="{data.defaults.requestReferrer}" />
+	<f:form.hidden id="requestFormat" name="requestFormat" value="{data.defaults.requestMode}" />
+	<f:form.hidden id="requestMode" name="requestMode" value="{data.defaults.redirected}" />
+	<f:form.hidden id="formcheck" name="formcheck" value="{data.defaults.formcheck}" />
+</f:section>
+
+<f:section name="manage">
+	<f:form.hidden id="subscriptions_old" name="subscriptions_old" value="{data.subscriptions_version}" />
+	<f:form.hidden id="email_old" name="email_old" value="{data.email}" />
+	<f:form.hidden id="identity" property="__identity" value="{data.uid}" />
+	<f:form.hidden id="requestReferrer" name="requestReferrer" value="{data.defaults.requestReferrer}" />
+	<f:form.hidden id="requestFormat" name="requestFormat" value="{data.defaults.requestMode}" />
+	<f:form.hidden id="requestMode" name="requestMode" value="{data.defaults.redirected}" />
+</f:section>
+
+<f:section name="identify">
+	<f:form.hidden id="requestReferrer" name="requestReferrer" value="{data.defaults.requestReferrer}" />
+	<f:form.hidden id="requestFormat" name="requestFormat" value="{data.defaults.requestMode}" />
+	<f:form.hidden id="requestMode" name="requestMode" value="{data.defaults.redirected}" />
+</f:section>

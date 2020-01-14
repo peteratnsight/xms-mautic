@@ -1,0 +1,36 @@
+{namespace xeb=Xms\XmsSystemextension\ViewHelpers}
+<f:section name="manage">
+	<div class="panel panel-default panel-newsletter">
+	  <div class="panel-heading"><f:translate key="subscription_form.header.newsletter_selection" default="Newsletter Selection" /></div>
+		  <div class="panel-body form-group">	
+		    <f:for each="{data.defaults.newsletter}" as="nlItem" key="idx">
+			<label class="checkbox">
+			<f:form.checkbox id="newsletter{idx}" checked="{xeb:getChecked(array:data.subscriptions,chkValue:nlItem.uid)}" property="subscriptions" value="{nlItem.uid}" multiple="1" />
+			<f:translate key="subscription_form.label.newsletter" default="Newsletter" />: {nlItem.name}</label>
+		    </f:for>
+		  </div>
+	</div>
+
+</f:section>
+
+
+
+<f:section name="subscribe">
+	<f:if condition="{data.defaults.newsletter_count}>1">
+		<f:then>
+	<div class="panel panel-default panel-newsletter">
+	  <div class="panel-heading"><f:translate key="subscription_form.header.newsletter_selection" default="Newsletter Selection" /></div>
+		  <div class="panel-body form-group">	
+		    <f:for each="{data.defaults.newsletter}" as="nlItem" key="idx">
+			<label class="checkbox">
+			<f:form.checkbox id="newsletter{idx}" checked="{xeb:getChecked(array:data.subscriptions,chkValue:nlItem.uid)}" property="subscriptions" value="{nlItem.uid}" multiple="1" />
+			<f:translate key="subscription_form.label.newsletter" default="Newsletter" />: {nlItem.name}</label>
+		    </f:for>
+		  </div>
+	</div>
+		</f:then>
+		<f:else>
+			<f:form.hidden id="newsletter1" property="subscriptions][" value="{data.defaults.newsletter.0.uid}" />	
+		</f:else>
+	</f:if>
+</f:section>

@@ -1,0 +1,55 @@
+projectHandle = notidentified
+plugin.tx_xmsmautic {	
+	view {
+		templateRootPath = EXT:xms_mautic/Resources/Private/Templates/
+		partialRootPath = EXT:xms_mautic/Resources/Private/Partials/
+		layoutRootPath = EXT:xms_mautic/Resources/Private/Layouts/
+	}
+	persistence {
+		storagePid = 6920
+	}
+
+	settings {
+		mautic_url=https://marketing.kongressmedia.de
+		mautic_pushcobj =
+		mauticInFocus = 
+		mautic_pushurl =
+		mautic_pushswitch=0
+		mautic_aggressivemode=0
+		mautic_delaytime=10
+		mautic_cookiedomain=
+		mautic_sitewide=0
+		mautic_targetBox =
+		add_specific_tags = 
+		mautic_standardform = 2
+
+		fallback {
+			tags = #formsubmission
+			lang = de
+			subscribetolist = 1
+		}
+
+		assetform {
+			tags = 
+			lang = de
+			subscribetolist = 1
+			form_id = 12
+			addpoints = 20
+			}
+
+
+	}
+
+
+}
+
+module.tx_xmsmautic {
+	view {
+		templateRootPath = EXT:xms_mautic/Resources/Private/Backend/Templates/
+		partialRootPath = EXT:xms_mautic/Resources/Private/Backend/Partials/
+		layoutRootPath = EXT:xms_mautic/Resources/Private/Backend/Layouts/
+	}
+	persistence {
+		storagePid =6920
+	}
+}

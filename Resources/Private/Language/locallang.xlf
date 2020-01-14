@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-01-09T00:24:53Z" product-name="xms_mautic">
+	<!-- target-language="de" -->
+		<header/>
+		<body>
+			<trans-unit id="subscription_form.header.personal_data">
+				<source>Personal Data</source>
+			</trans-unit>
+			<trans-unit id="subscription_form.header.newsletter_selection">
+				<source>Newsletter Selection</source>
+			</trans-unit>
+			<trans-unit id="subscription_form.submit">
+				<source>Submit</source>
+			</trans-unit>
+			<trans-unit id="subscription_form.field.gender">
+				<source>Gender</source>
+			</trans-unit>
+			<trans-unit id="subscription_form.field.gender.option.male">
+				<source>Mr</source>
+			</trans-unit>
+			<trans-unit id="subscription_form.field.gender.option.female">
+				<source>Mrs</source>
+			</trans-unit>
+
+
+			<trans-unit id="subscription_form.header.field.firstname">
+				<source>Firstname</source>
+			</trans-unit>
+			<trans-unit id="subscription_form.header.field.lastname">
+				<source>Lastname</source>
+			</trans-unit>
+			<trans-unit id="subscription_form.header.field.company">
+				<source>Company</source>
+			</trans-unit>
+			<trans-unit id="subscription_form.header.field.email">
+				<source>Email</source>
+			</trans-unit>
+			<trans-unit id="subscription_form.label.newsletter">
+				<source>Newsletter</source>
+			</trans-unit>
+
+
+
+			<trans-unit id="validator.emailnotunique">
+				<source>This email is already registered. Please login to our subscription service to add remove subscriptions.</source>
+			</trans-unit>
+
+			<trans-unit id="email.1221559976">
+				<source>Ungueltige Emailadresse</source>
+			</trans-unit>
+
+
+
+			<trans-unit id="emailmessage.link_text.subscription_center">
+				<source>Access the Newsletter Subscription Panel</source>
+			</trans-unit>
+
+			<trans-unit id="emailmessage.link_text.optin_link">
+				<source>Confirm your subscription</source>
+			</trans-unit>
+
+
+			<trans-unit id="emailmessage.intro.optout_mail">
+				<source>We have received a removal request from our newsletter service that we will proceed.</source>
+			</trans-unit>
+ 
+			<trans-unit id="emailmessage.main.optout_mail">
+				<source>We are sorry that we have lost your interest in our topics or have not met your expectations with our service.</source>
+			</trans-unit>
+
+			<trans-unit id="emailmessage.link_header.optout_mail">
+				<source>You can sign into our service again at any time by clicking the following link</source>
+			</trans-unit>
+
+			<trans-unit id="emailmessage.intro.subscription_center">
+				<source>Please click the following link to manage your subscriptions to our newsletter service</source>
+			</trans-unit>
+
+			<trans-unit id="emailmessage.intro.welcome_mail_header">
+				<source>Thank you for subscribing to our newsletter service. We hope that we will meet your expectations for  this service.</source>
+			</trans-unit>
+
+			<trans-unit id="emailmessage.welcome.subscription_center">
+				<source>If you wish to change your subscription at any time, you are free to use our newsletter subscription panel</source>
+			</trans-unit>
+
+			<trans-unit id="emailmessage.regards_text">
+				<source>With best regards,</source>
+			</trans-unit>
+
+			<trans-unit id="emailmessage.autotext_notice">
+				<source>Notice: This is an automatic mail by our newsletter subscription service. But do not hesitate to contact me for any questions.</source>
+			</trans-unit>
+
+			<trans-unit id="email.salutation.format.1">
+				<source>Dear</source>
+			</trans-unit>
+
+			<trans-unit id="email.salutation.format.2">
+				<source>Dear</source>
+			</trans-unit>
+
+			<trans-unit id="email.salutation.subscriber">
+				<source>Dear Subscriber</source>
+			</trans-unit>
+
+
+
+			<trans-unit id="emailmessage.intro.optin_mail_header">
+				<source>We have received a subscription request from this email for our newsletter service</source>
+			</trans-unit>
+
+			<trans-unit id="emailmessage.intro.optin_mail_link">
+				<source>Please confirm the request by clicking on the following link</source>
+			</trans-unit>
+
+
+			<trans-unit id="emailmessage.intro.mass_mail_link">
+				<source>If this is of interest for you please confirm the subscription by clicking on the following link</source>
+			</trans-unit>
+
+
+			<trans-unit id="confirmation.body">
+				<source>The data has been saved successfully. Please check your inbox to confirm your subscription.</source>
+			</trans-unit>
+
+
+
+
+
+
+			<trans-unit id="submitaction.default.response">
+				<source>Your data has been saved.</source>
+			</trans-unit>
+
+			<trans-unit id="sending.optout.success">
+				<source>The confirmation email has been sent.</source>
+			</trans-unit>
+
+			<trans-unit id="sending.optout.failure">
+				<source>There was an error in sending the confirmation email.</source>
+			</trans-unit>
+
+			<trans-unit id="sending.optin.success">
+				<source>The confirmation email has been sent.</source>
+			</trans-unit>
+
+			<trans-unit id="sending.optin.failure">
+				<source>There was an error in sending the confirmation email.</source>
+			</trans-unit>
+
+			<trans-unit id="sending.manage.success">
+				<source>The email with the access information has been sent.</source>
+			</trans-unit>
+
+			<trans-unit id="sending.manage.failure">
+				<source>There was an error in sending the email.</source>
+			</trans-unit>
+
+			<trans-unit id="sending.welcome.success">
+				<source>Thank you for confirming your subscription.</source>
+			</trans-unit>
+
+			<trans-unit id="sending.welcome.failure">
+				<source></source>
+			</trans-unit>
+
+			<trans-unit id="sending.generic.success">
+				<source>The mail has been sent.</source>
+			</trans-unit>
+
+			<trans-unit id="sending.generic.failure">
+				<source>There was an error in sending the mail.</source>
+			</trans-unit>
+
+
+
+			<trans-unit id="email.subject.optin">
+				<source>Please confirm your newsletter subscription</source>
+			</trans-unit>
+
+			<trans-unit id="email.subject.optout">
+				<source>Confirmation of your opt-out to our newsletter service</source>
+			</trans-unit>
+
+			<trans-unit id="email.subject.welcome">
+				<source>Welcome to our newsletter service</source>
+			</trans-unit>
+
+			<trans-unit id="email.subject.manage">
+				<source>Your access to the newsletter subscription panel</source>
+			</trans-unit>
+
+			<trans-unit id="email.subject.generic">
+				<source>Important message by Kongress Media</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>
+

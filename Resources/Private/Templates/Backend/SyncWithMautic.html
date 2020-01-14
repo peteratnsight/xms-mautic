@@ -1,0 +1,39 @@
+{namespace xeb=Xms\XmsSystemextension\ViewHelpers}
+
+<f:layout name="Backend"/>
+ 
+<f:section name="main">
+<div class="col-md-12">
+<f:form id="dashboard-form" action="syncWithMautic" >
+<div class="col-md-6">
+ <f:form.select class="form-control" id="listSelector" name="selectList" options="{lists}" optionValueField="uid" optionLabelField="name" prependOptionLabel="-- SELECT --" value="{args.selectList}" />
+</div>
+<div class="col-md-6">
+ <f:form.checkbox name="forceall" value="1" /> Force all
+</div>
+</f:form>
+</div>
+
+Count: {count}<br />
+ToSync: {syncstate.tobedone}<br />
+Syncd: {syncstate.done}<br />
+<hr />
+{xeb:debug(data:data)}
+<hr />
+{xeb:debug(data:args)}
+
+<f:if condition="{args.selectList}>0">
+<f:if condition="{syncstate.tobedone}>0">
+Reload!
+<script>
+var $j = jQuery.noConflict();
+
+$j(document).ready(function($) {
+function submitForm(){
+  $('#dashboard-form').submit();
+}
+setTimeout(submitForm, 5000);
+});
+</script>
+</f:if></f:if>
+</f:section>

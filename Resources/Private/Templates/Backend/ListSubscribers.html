@@ -1,0 +1,46 @@
+{namespace xeb=Xms\XmsSystemextension\ViewHelpers}
+
+<f:layout name="Backend"/>
+ 
+<f:section name="main">
+
+    <h2 class="col-md-8 col-xs-12">Newsletter Subscribers</h2>
+    <div class="col-md-4 col-xs-12"><f:form id="synAction" action="syncWithMautic" ><f:form.button id="syncbutton" name="sync" type="submit">Sync:: Typo3 &lt;&gt; Mautic</f:form.button></f:form></div>
+
+<f:form id="dashboard-form" action="listSubscribers" >
+ <f:form.select id="listSelector" name="selectList" options="{lists}" optionValueField="uid" optionLabelField="name" prependOptionLabel="-- SELECT --" value="{args.selectList}" />
+</f:form>
+
+
+  <table class="table table-striped">
+    <thead>
+	<tr>
+	<f:for each="{conf.viewfields}" as="fieldname">
+	<td>{fieldname}</td>
+	</f:for>
+	<td>Actions</td>
+	</tr>
+	
+    </thead>
+
+
+    <f:for each="{data}" as="item">
+      <tr>
+      <f:for each="{conf.viewfields}" as="fieldname">
+	<td><f:switch expression="{fieldname}">
+	<f:case value="tstamp"><f:format.date format="d/m/y m:h" >@{xeb:arrayElement(array:item,key:fieldname)}</f:format.date></f:case>
+	<f:case value="crdate"><f:format.date format="d/m/y m:h" >@{xeb:arrayElement(array:item,key:fieldname)}</f:format.date></f:case>
+	<f:case value="last_syncdate"><f:format.date format="d/m/y m:h" >@{xeb:arrayElement(array:item,key:fieldname)}</f:format.date></f:case>
+	<f:case value="last_userupdate"><f:format.date format="d/m/y m:h" >@{xeb:arrayElement(array:item,key:fieldname)}</f:format.date></f:case>
+	
+	<f:case default="TRUE">{xeb:arrayElement(array:item,key:fieldname)}</f:case>
+	</f:switch></td>
+      </f:for>
+	<td>Show | Update | Delete</td>
+      </tr>
+    </f:for>
+  </table>
+
+<hr />
+{xeb:debug(data:debug)}
+</f:section>

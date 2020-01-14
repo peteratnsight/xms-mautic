@@ -1,0 +1,24 @@
+<f:layout name="include" />
+<!-- subscribe/form &lang={lang}&tags={tags}&subscribetolist={subscribetolist}&refererurl={refererurl}-->
+<f:section name="main"><script type="text/javascript" src="{mautic_url}/{path}?{params}"></script>
+<f:if condition="{googleTrackCode}"><f:if condition="{googleId}">
+<script src="/fileadmin/v2017/js/libs/jquery.min.js" type="text/javascript"></script>
+<script src="/fileadmin/v2017/js/libs/cookie-consent.js" type="text/javascript"></script>
+<script type="text/javascript">
+  initScriptTag('www.googletagmanager.com/gtag/js?id={$googleID}',document,'script','google-analytics');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{googleId}');
+
+  var $j = jQuery.noConflict();
+  $j(document).ready(function($){
+	$('div.mauticform_wrapper form').submit(function(){
+		labelName = $(this).attr('data-mautic-form');
+		gtag('event', 'click', { 'event_category': 'mauticSubmit', 'event_label': labelName });
+   	});
+  });
+}
+</script>
+</f:if></f:if></f:section>
+

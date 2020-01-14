@@ -1,0 +1,13 @@
+<f:if condition="{include_mautic} == 1">
+<!-- Start Mautic Integration -->
+<script id="script-mautic-tracking" type="text/javascript" async="async">
+initScriptTag('{mautic_url}/mtc.js',document,'script','mautic-tracking');
+window['MauticTrackingObject']='mt';window['mt']=window['mt']||function(){(window['mt'].q=window['mt'].q||[]).push(arguments)};
+mt('send', 'pageview');
+</script>
+<f:if condition="{include_infocus_script} == 1">
+<f:format.raw>{infocuscontent}</f:format.raw>
+</f:if>
+<!-- End Mautic Integration -->
+</f:if>
+

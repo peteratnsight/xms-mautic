@@ -1,0 +1,174 @@
+plugin.tx_xmsmautic {
+	view {
+		templateRootPath = {$plugin.tx_xmsmautic.view.templateRootPath}
+		partialRootPath = {$plugin.tx_xmsmautic.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_xmsmautic.view.layoutRootPath}
+	}
+	persistence {
+		storagePid = {$plugin.tx_xmsmautic.persistence.storagePid}
+	}
+
+	settings {
+		mautic_url = {$plugin.tx_xmsmautic.settings.mautic_url}
+		mautic_switch = 1
+		mauticInFocus = {$plugin.tx_xmsmautic.settings.mauticInFocus}
+
+		mautic_pushcobj = {$plugin.tx_xmsmautic.settings.mautic_pushcobj}
+		mautic_pushurl = {$plugin.tx_xmsmautic.settings.mautic_pushurl}
+
+		mautic_targetBox = {$plugin.tx_xmsmautic.settings.mautic_targetBox}
+		mautic_pushswitch = {$plugin.tx_xmsmautic.settings.mautic_pushswitch}
+		mautic_aggressivemode = {$plugin.tx_xmsmautic.settings.mautic_aggressivemode}
+		mautic_delaytime = {$plugin.tx_xmsmautic.settings.mautic_delaytime}
+		mautic_cookiedomain = {$plugin.tx_xmsmautic.settings.mautic_cookiedomain}
+		mautic_sitewide = {$plugin.tx_xmsmautic.settings.mautic_sitewide}
+		add_specific_tags = {$plugin.tx_xmsmautic.settings.add_specific_tags}
+
+		#infocus.1 {
+		#	ifsubject =
+		#	ifvalue =
+		#	ifaction = returnelement
+		#	thenaction = mauticinfocus:1
+		#	thenparams = COA
+		#}
+
+		assetform {
+			tags = {$plugin.tx_xmsmautic.settings.assetform.tags}
+			lang = {$plugin.tx_xmsmautic.settings.assetform.lang}
+			subscribetolist = {$plugin.tx_xmsmautic.settings.assetform.subscribetolist}
+			form_id = {$plugin.tx_xmsmautic.settings.assetform.form_id}
+			addpoints = {$plugin.tx_xmsmautic.settings.assetform.addpoints}
+			}
+
+		fallback {
+			tags = {$plugin.tx_xmsmautic.settings.fallback.tags}
+			lang = {$plugin.tx_xmsmautic.settings.fallback.lang}
+			subscribetolist = {$plugin.tx_xmsmautic.settings.fallback.subscribetolist}
+		}
+		projectHandle = {$projectHandle}
+
+		auth {
+			clientKey = 1419korrya2osgscc00ws448kcocssg8g84gws48socwg8k0cc
+			clientSecret = 3bmlmopl0c4kw8scs8gwcs8okw4gs4wkossgcc8cccgwcg8kk0
+			version = OAuth1a
+			callback = https://www.kongressmedia.de/mautic/b/callback/cmapi.caller
+		}
+
+		googleID={$googleID}
+	}
+
+	mvc.callDefaultActionIfActionCantBeResolved = 1
+}
+
+# Module configuration
+module.tx_xmsmautic.settings < plugin.tx_xmsmautic.settings
+module.tx_xmsmautic.persistence {
+		storagePid = {$module.tx_xmsmautic.persistence.storagePid}
+	}
+#module.tx_xmsmautic.view {
+#		templateRootPath = {$module.tx_xmsmautic.view.templateRootPath}
+#		partialRootPath = {$module.tx_xmsmautic.view.partialRootPath}
+#		layoutRootPath = {$module.tx_xmsmautic.view.layoutRootPath}
+#	}
+
+
+page.includeCSS.tx_xmsmautic_app = EXT:xms_mautic/Resources/Public/Css/styles.css
+page.includeJSFooterlibs.tx_xmsmautic_app = EXT:xms_mautic/Resources/Public/Js/script.js
+
+lib.mautic_ = USER
+lib.mautic_ {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = XmsMautic
+    pluginName = app
+    vendorName = Xms
+    controller = Mautic
+    action = tracker
+    switchableControllerActions {
+        Mautic {
+            1 = tracker
+        }
+    }
+    view < plugin.tx_xmsmautic.view
+    persistence < plugin.tx_xmsmautic.persistence
+    settings < plugin.tx_xmsmautic.settings
+}
+
+temp.newsletterApp = USER
+temp.newsletterApp {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = XmsMautic
+    pluginName = app
+    vendorName = Xms
+    controller = Mautic
+    action=caller
+    switchableControllerActions {
+        Mautic {
+            1 = submit
+	    2 = subscribe
+	    3 = manage
+	    4 = identify
+	    5 = optinconfirm
+	    6 = redounsubscribe
+	    7 = assetForm
+	    8 = ajaxCaller
+
+        }
+    }
+    view < plugin.tx_xmsmautic.view
+    persistence < plugin.tx_xmsmautic.persistence
+    settings < plugin.tx_xmsmautic.settings
+}
+
+
+temp.callbackApp = USER
+temp.callbackApp {
+    userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+    extensionName = XmsMautic
+    pluginName = app
+    vendorName = Xms
+    controller = Backend
+    action = callback
+    switchableControllerActions {
+        Backend {
+            1 = callback
+        }
+    }
+    view < plugin.tx_xmsmautic.view
+    persistence < plugin.tx_xmsmautic.persistence
+    settings < plugin.tx_xmsmautic.settings
+}
+
+callback_api = PAGE
+callback_api {
+  typeNum = 6551
+  config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = 0
+    admPanel = 0
+    no_cache = 1
+    debug = 0
+    metaCharset = UTF-8 
+  }
+ 
+  10 = COA
+  10 < temp.callbackApp
+}
+
+newsletter_api = PAGE
+newsletter_api {
+  typeNum = 6771
+  config {
+    disableAllHeaderCode = 1
+    xhtml_cleaning = 0
+    admPanel = 0
+    no_cache = 1
+    debug = 0
+    metaCharset = UTF-8 
+  }
+ 
+  10 = COA
+  10 < temp.newsletterApp
+}
+
+plugin.tx_xmscookieconsent.settings.services.mautic-tracking=marketing
+plugin.tx_xmscookieconsent.settings.servicesswitch.mautic-tracking = 1

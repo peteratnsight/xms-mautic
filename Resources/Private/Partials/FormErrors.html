@@ -1,0 +1,12 @@
+
+<f:form.validationResults for="{object}">
+<f:if condition="{validationResults.flattenedErrors}">
+<ul class="list-group "><f:for each="{validationResults.flattenedErrors}" key="propertyPath" as="errors">
+ <li class="alert alert-danger list-group-item" role="alert">
+	<f:for each="{errors}" as="error" key="errorKey">{error}</f:for>
+	<f:if condition="{propertyPath}=='subscription.email'"><f:link.action action="manage" ><f:translate key="subscription_form.label.management_console" default="Request Access Link to Subscription Management Console" /></f:link.action>
+	</f:if>
+ </li>
+</f:for></ul>
+</f:if>
+</f:form.validationResults>

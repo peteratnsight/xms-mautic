@@ -1,0 +1,19 @@
+/** CSS **/
+
+#xmsSubscription .div-field-required label::after {
+	content: " *";
+}
+
+#xmsSubscription label.checkbox,
+#xmsSubscription label.multiple-checkbox,
+#xmsSubscription label.radio,
+#xmsSubscription label.multiple-radio {
+	display: block;
+	color: inherit;
+	font-size: inherit;
+}
+
+#xmsSubscription label.radio,
+#xmsSubscription label.multiple-radio {
+	text-indent: -18px;
+}

@@ -1,0 +1,5 @@
+<f:render partial="Email/SalutationMessage" arguments="{email:email}"/>
+<f:for each="{email.config.blocks}" as="block">
+<f:render partial="Email/{block}Message" arguments="{email:email}"/>
+</f:for>
+<f:render partial="Email/FooterMessage" arguments="{email:email}"/>

@@ -1,0 +1,19 @@
+{namespace xeb=Xms\XmsSystemextension\ViewHelpers}
+
+<f:layout name="Backend"/>
+ 
+<f:section name="main">
+
+<h2 class="jumbotron">Mautic Console Management</h2>
+<ul class="list-group">
+<f:for each="{conf.allowedTasks}" as="command" key="key">	
+	<li class="list-group-item"><f:link.action action="mauticConsole" arguments="{task:key}">{command}</f:link.action></li>
+</f:for>
+
+
+
+
+
+<hr />
+{xeb:debug(data:args)}
+</f:section>

@@ -1,0 +1,15 @@
+{
+	"name": "xms-mautic",
+	"type": "typo3-cms-extension",
+	"description": "XMS Mautic Extension",
+
+	"require": {
+		"typo3/cms-core": "~7.6.0",
+		"typo3/cms-frontend": "~7.6.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Xms\\XmsMautic\\": "Classes"
+		}
+	}
+}

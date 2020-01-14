@@ -1,0 +1,33 @@
+{namespace h=Xms\XmsSystemextension\ViewHelpers\Be}
+<h:IncludeClientUi jquery="1" jqueryui="1" extension="xms_mautic" />
+
+<f:be.container loadExtJs="0" loadPrototype="0" loadScriptaculous="0" >
+    <div class="typo3-fullDoc">
+        <div id="typo3-docheader">
+            <div id="typo3-docheader-row2">
+                <div class="docheader-row2-left">
+                    <f:be.buttons.csh />
+                    <f:be.menus.actionMenu>
+                        <f:be.menus.actionMenuItem label="Dashboard" controller="Backend" action="index" />
+                        <f:be.menus.actionMenuItem label="List Subscriber Data" controller="Backend" action="listSubscribers" />
+                        <f:be.menus.actionMenuItem label="Integrate Data From Mautic" controller="Backend" action="integrateSubscribersFromMautic" />
+                        <f:be.menus.actionMenuItem label="Integrate Data From Booking" controller="Backend" action="integrateSubscribersFromBooking" />
+                        <f:be.menus.actionMenuItem label="Update Single Mautic Data" controller="Backend" action="updateData" />
+                        <f:be.menus.actionMenuItem label="Get LeadData From Mautic" controller="Backend" action="requestData" />
+                        <f:be.menus.actionMenuItem label="Mautic Console" controller="Backend" action="mauticConsole" />
+                        <f:be.menus.actionMenuItem label="Mautic Auth" controller="Backend" action="mauticAuth" />
+                    </f:be.menus.actionMenu>
+                </div>
+                <div class="docheader-row2-right">2
+                    <f:be.pagePath />
+                    <f:be.pageInfo />
+                </div>
+            </div>
+        </div>
+        <div id="typo3-docbody">
+            <div id="typo3-inner-docbody">
+                <f:render section="main" />
+            </div>
+        </div>
+    </div>
+</f:be.container>

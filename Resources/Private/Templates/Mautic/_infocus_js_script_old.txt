@@ -1,0 +1,37 @@
+<f:switch expression="{call_infocus_script}">
+  <f:case value="1"><script src="{mautic_url}/focus/{infocusObj}.js?{infocusParams}" type="text/javascript" charset="utf-8" async="async"></script></f:case>
+  <f:case value="2"><script type="text/javascript"> var $j = jQuery.noConflict(); $j(document).ready(function($){
+     $.ajax({
+	url: '//marketing.kongressmedia.de/context/request/ident?callback=?',
+	async: false,
+	dataType: 'json',
+	success: function(json) {
+		if(json.ident == true) {
+			var script = document.createElement('script');
+		        script.setAttribute('type', 'text/javascript');
+		        script.setAttribute('src', '{mautic_url}/focus/{infocusObj}.js?{infocusParams}');
+			script.async = 'true';
+        		document.body.appendChild(script);
+		}		
+	}
+    });
+});</script></f:case>
+  <f:case value="3"><script type="text/javascript"> var $j = jQuery.noConflict(); $j(document).ready(function($){
+     $.ajax({
+	url: '//marketing.kongressmedia.de/context/request/ident?callback=?',
+	async: false,
+	dataType: 'json',
+	success: function(json) {
+		if(json.ident == false) {
+			var script = document.createElement('script');
+		        script.setAttribute('type', 'text/javascript');
+		        script.setAttribute('src', '{mautic_url}/focus/{infocusObj}.js?{infocusParams}');
+			script.async = 'true';
+        		document.body.appendChild(script);
+		}		
+	}
+    });
+});</script></f:case>
+
+  <f:case default="TRUE"></f:case>
+</f:switch>

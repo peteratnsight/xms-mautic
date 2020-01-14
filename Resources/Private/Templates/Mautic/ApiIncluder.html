@@ -1,0 +1,19 @@
+<f:layout name="include" />
+
+<f:section name="main">
+<f:render section="{layout}" arguments="{layout:layout, data:data, params:params}"/>
+</f:section>
+
+
+<f:section name="listemails"><ul>
+<f:for each="{data}" as="item" key="idx" iteration="iterator">
+	<li><a href="https://marketing.kongressmedia.de/newsletter/show/{item.id}" target="_modalBox" gaq="click" gaq-type="externalLink" title="Newsletter">{item.subject}</a></li>
+</f:for>
+</ul>
+</f:section>
+
+<f:section name="default">
+<h2>Method: {layout}</h2>
+<pre><f:debug title="Data">{data}</f:debug></pre>
+<pre><f:debug title="Params">{params}</f:debug></pre>
+</f:section>

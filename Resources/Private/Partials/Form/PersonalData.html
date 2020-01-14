@@ -1,0 +1,25 @@
+	<div class="form-group">
+	<label for="gender"><f:translate key="subscription_form.field.gender" default="Gender" /></label>
+	<f:form.select id="gender" class="form-control field field-gender" property="gender" options="{data.defaults.gender}" value="{data.gender}" prependOptionLabel="{f:translate(key:'selectgender',default:'Select')}" />
+	</div>
+
+	<div class="form-group">
+	<label for="firstname"><f:translate key="subscription_form.field.firstname" default="Firstname" /></label>
+	<f:form.textfield id="firstname" class="form-control field field-firstname" property="firstname" value="{data.firstname}"/>
+	</div>
+
+	<div class="form-group">
+	<label for="lastname"><f:translate key="subscription_form.field.lastname" default="Lastname" /></label>
+	<f:form.textfield id="lastname" class="form-control field field-lastname field-required" required="1" property="lastname" value="{data.lastname}"/>
+	</div>
+
+	<div class="form-group">
+	<label for="company"><f:translate key="subscription_form.field.company" default="Company" /></label>
+	<f:form.textfield id="company" class="form-control field field-company" property="company" value="{data.company}"/>
+	</div>
+
+	<div class="form-group">
+	<label for="email"><f:translate key="subscription_form.field.email" default="Email" /></label>
+	<f:form.textfield id="email" class="form-control field field-email field-required" required="1" property="email" value="{data.email}"/>
+	<f:render partial="FieldError" arguments="{ fieldName: 'email' }" />	
+	</div>

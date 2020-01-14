@@ -1,0 +1,420 @@
+<T3DataStructure>
+    <meta>
+       <langDisable>1</langDisable> 
+	  <!--  <langChildren>1</langChildren>!-->
+        </meta>
+  <sheets>
+	<settings.flexform.general>
+	  <ROOT>
+		<TCEforms>
+			<sheetTitle>GENERAL</sheetTitle>
+		</TCEforms>
+	    <type>array</type>
+	    <el>
+                    <switchableControllerActions>
+                    	   <TCEforms>
+                    		 <label>Select function</label>
+                    		 <config>
+                    		  <type>select</type>
+                    		  <items>
+			
+                    			<numIndex index="0">
+                    			 <numIndex index="0">- Please select -</numIndex>
+                    			 <numIndex index="1"></numIndex>
+                    			</numIndex>
+			
+                    			<numIndex index="1">
+                    			 <numIndex index="0">Mautic Form</numIndex>
+                    			 <numIndex index="1">Mautic->formIncluder</numIndex>
+                    			</numIndex>
+
+                    			<numIndex index="2">
+                    			 <numIndex index="0">Mautic List Assets</numIndex>
+                    			 <numIndex index="1">Mautic->assetIncluder</numIndex>
+                    			</numIndex>
+
+                    			<numIndex index="3">
+                    			 <numIndex index="0">Mautic API Request</numIndex>
+                    			 <numIndex index="1">Mautic->apiIncluder</numIndex>
+                    			</numIndex>
+
+                    			<numIndex index="20">
+                    			 <numIndex index="0">Dynamic Content Include</numIndex>
+                    			 <numIndex index="1">Mautic->dynamicContent</numIndex>
+                    			</numIndex>
+
+                    			<numIndex index="30">
+                    			 <numIndex index="0">Mautic DirectSubscription Form</numIndex>
+                    			 <numIndex index="1">Mautic->subscribe;Mautic->submit;Mautic->identify;Mautic->manage</numIndex>
+                    			</numIndex>
+
+                    			<numIndex index="40">
+                    			 <numIndex index="0">Mautic DirectManagement Form</numIndex>
+                    			 <numIndex index="1">Mautic->manage;Mautic->submit;Mautic->identify</numIndex>
+                    			</numIndex>
+
+                    			<numIndex index="99">
+                    			 <numIndex index="0">Mautic Tracker Pic</numIndex>
+                    			 <numIndex index="1">Mautic->tracker</numIndex>
+                    			</numIndex>
+			
+                    		   </items>
+                    		 </config>
+                    	   </TCEforms>
+                    </switchableControllerActions>
+
+
+		<settings.flexform.general.itemId>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Item ID</label>
+			<config>
+					<type>input</type>
+					<eval>trim</eval>
+					<checkbox></checkbox>
+					<size>30</size>
+				</config>
+		  	</TCEforms>
+		 </settings.flexform.general.itemId> 
+		<settings.flexform.general.pidList>
+		  	<TCEforms>
+			<label>Target Page</label>
+			<config>
+				<type>group</type>
+				<internal_type>db</internal_type>
+				<allowed>pages</allowed>
+				<size>1</size>
+				<maxitems>1</maxitems>
+				<minitems>0</minitems>
+				<show_thumbs>1</show_thumbs>
+			</config>
+		  	</TCEforms>
+		</settings.flexform.general.pidList>
+		
+	    </el>
+	  </ROOT>
+    </settings.flexform.general>
+
+	<settings.flexform.includespex>
+	  <ROOT>
+		<TCEforms>
+			<sheetTitle>Include Specs</sheetTitle>
+		</TCEforms>
+	    <type>array</type>
+	    <el>
+		<settings.flexform.includespex.tags>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Tags</label>
+			<config>
+					<type>input</type>
+					<eval>trim</eval>
+					<checkbox></checkbox>
+					<size>30</size>
+				</config>
+		  	</TCEforms>
+		 </settings.flexform.includespex.tags> 
+		<settings.flexform.includespex.lang>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Lang</label>
+			<config>
+					<type>input</type>
+					<eval>trim</eval>
+					<checkbox></checkbox>
+					<size>30</size>
+				</config>
+		  	</TCEforms>
+		 </settings.flexform.includespex.lang> 
+		<settings.flexform.includespex.subscribetolist>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Subscribe-to-List(s) - Comma-Seperated</label>
+			<config>
+					<type>input</type>
+					<eval>trim</eval>
+					<checkbox></checkbox>
+					<size>30</size>
+				</config>
+		  	</TCEforms>
+		 </settings.flexform.includespex.subscribetolist> 
+		<settings.flexform.includespex.refererurl>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>RefererUrl (Default)</label>
+			<config>
+					<type>input</type>
+					<eval>trim</eval>
+					<checkbox></checkbox>
+					<size>30</size>
+				</config>
+		  	</TCEforms>
+		 </settings.flexform.includespex.refererurl> 
+		<settings.flexform.includespex.pcode>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Promotion Code (Optional)</label>
+			<config>
+					<type>input</type>
+					<eval>trim</eval>
+					<checkbox></checkbox>
+					<size>30</size>
+				</config>
+		  	</TCEforms>
+		 </settings.flexform.includespex.pcode> 
+		<settings.flexform.includespex.form_context>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Form Context</label>
+			<config>
+					<type>input</type>
+					<eval>trim</eval>
+					<checkbox></checkbox>
+					<size>30</size>
+				</config>
+		  	</TCEforms>
+		 </settings.flexform.includespex.form_context> 
+
+	    </el>
+	  </ROOT>
+    </settings.flexform.includespex>
+    <settings.flexform.apirequest>
+	  <ROOT>
+		<TCEforms>
+			<sheetTitle>API Request</sheetTitle>
+		</TCEforms>
+	    <type>array</type>
+	    <el>
+
+		<settings.flexform.apirequest.caller>
+			  <TCEforms>
+				<label>API Function</label>
+				<config>
+					<type>select</type>
+					<items type="array">
+					<numIndex index="0" type="array">
+						<numIndex index="0">Get List of Contacts</numIndex>
+						<numIndex index="1">listContacts</numIndex>
+					</numIndex>
+					<numIndex index="1" type="array">
+						<numIndex index="0">Get List of Companies</numIndex>
+						<numIndex index="1">listCompanies</numIndex>
+					</numIndex>
+					<numIndex index="2" type="array">
+						<numIndex index="0">Get List of Emails</numIndex>
+						<numIndex index="1">listEmails</numIndex>
+					</numIndex>
+					<numIndex index="3" type="array">
+						<numIndex index="0">Get List of Assets</numIndex>
+						<numIndex index="1">listAssets</numIndex>
+					</numIndex>
+					<numIndex index="4" type="array">
+						<numIndex index="0">Get List of Pages</numIndex>
+						<numIndex index="1">listPages</numIndex>
+					</numIndex>
+
+					</items>
+					<maxitems>1</maxitems>
+					<size>1</size>
+				</config>
+			  </TCEforms>
+		</settings.flexform.apirequest.caller>
+
+		<settings.flexform.apirequest.searchfilter>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Caller SearchFilter</label>
+			<config>
+					<type>input</type>
+					<eval>trim</eval>
+					<checkbox></checkbox>
+					<size>30</size>
+				</config>
+		  	</TCEforms>
+		 </settings.flexform.apirequest.searchfilter> 
+
+		<settings.flexform.apirequest.start>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Caller Start</label>
+			<config>
+				<type>input</type>
+				<eval>trim</eval>
+				<checkbox></checkbox>
+				<size>30</size>
+			</config>
+		  	</TCEforms>
+		 </settings.flexform.apirequest.start> 
+
+		<settings.flexform.apirequest.limit>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Caller Limit</label>
+			<config>
+				<type>input</type>
+				<eval>trim</eval>
+				<checkbox></checkbox>
+				<size>30</size>
+			</config>
+		  	</TCEforms>
+		 </settings.flexform.apirequest.limit> 
+
+		<settings.flexform.apirequest.orderby>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Caller OrderBy</label>
+			<config>
+				<type>input</type>
+				<eval>trim</eval>
+				<checkbox></checkbox>
+				<size>30</size>
+			</config>
+		  	</TCEforms>
+		 </settings.flexform.apirequest.orderby> 
+
+		<settings.flexform.apirequest.orderbydir>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Caller OrderBy ASC/DESC</label>
+			<config>
+				<type>input</type>
+				<eval>trim</eval>
+				<checkbox></checkbox>
+				<size>30</size>
+			</config>
+		  	</TCEforms>
+		 </settings.flexform.apirequest.orderbydir> 
+
+		<settings.flexform.apirequest.publishedOnly>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Caller Published Y/N</label>
+			<config>
+				<type>check</type>
+				<default>0</default>
+			</config>
+		  	</TCEforms>
+		 </settings.flexform.apirequest.publishedOnly>
+
+		<settings.flexform.apirequest.minimal>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Caller Array with/out Lists Y/N</label>
+			<config>
+				<type>check</type>
+				<default>0</default>
+			</config>
+		  	</TCEforms>
+		 </settings.flexform.apirequest.minimal>
+	    </el>
+	  </ROOT>
+    </settings.flexform.apirequest>
+	<settings.flexform.misc>
+	  <ROOT>
+		<TCEforms>
+			<sheetTitle>Misc</sheetTitle>
+		</TCEforms>
+	    <type>array</type>
+	    <el>
+
+		
+
+		<settings.flexform.misc.formfieldtype>
+			  <TCEforms>
+				<label>Form Field Type</label>
+				<config>
+					<type>select</type>
+					<items type="array">
+					<numIndex index="0" type="array">
+						<numIndex index="0">checkbox</numIndex>
+						<numIndex index="1">checkbox</numIndex>
+					</numIndex>
+					<numIndex index="1" type="array">
+						<numIndex index="0">radio</numIndex>
+						<numIndex index="1">radio</numIndex>
+					</numIndex>
+					<numIndex index="2" type="array">
+						<numIndex index="0">select</numIndex>
+						<numIndex index="1">select</numIndex>
+					</numIndex>
+					</items>
+					<maxitems>1</maxitems>
+					<size>1</size>
+				</config>
+			  </TCEforms>
+		</settings.flexform.misc.formfieldtype>
+
+
+		<settings.flexform.misc.itemWrap>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Item Wrap</label>
+			<config>
+					<type>input</type>
+					<eval>trim</eval>
+					<checkbox></checkbox>
+					<size>100</size>
+				</config>
+		  	</TCEforms>
+		  </settings.flexform.misc.itemWrap> 
+		<settings.flexform.misc.listWrap>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>List/Content Wrap</label>
+			<config>
+					<type>input</type>
+					<eval>trim</eval>
+					<checkbox></checkbox>
+					<size>100</size>
+				</config>
+		  	</TCEforms>
+		  </settings.flexform.misc.listWrap> 
+
+	    </el>
+	  </ROOT>
+    </settings.flexform.misc>
+	<settings.flexform.dynamiccontent>
+	  <ROOT>
+		<TCEforms>
+			<sheetTitle>Dynamic Content</sheetTitle>
+		</TCEforms>
+	    <type>array</type>
+	    <el>
+
+		<settings.flexform.dynamiccontent.items>
+			  <TCEforms>
+				<label>Dynamic Content Conditions</label>
+				<config>
+					<type>inline</type>
+					<foreign_table>tx_xmsmautic_domain_model_condition</foreign_table>
+					<foreign_field>cobj_uid</foreign_field>
+					<maxitems>999</maxitems>
+					<appearance type="array">
+						<collapseAll>FALSE</collapseAll>
+						<levelLinksPosition>top</levelLinksPosition>
+						<showSynchronizationLink>1</showSynchronizationLink>
+						<showPossibleLocalizationRecords>1</showPossibleLocalizationRecords>
+						<showAllLocalizationLink>1</showAllLocalizationLink>
+					</appearance>
+				</config>
+			  </TCEforms>
+		</settings.flexform.dynamiccontent.items>
+
+		<settings.flexform.dynamiccontent.fallback>
+		  	<TCEforms>
+			<exclude>1</exclude>
+			<label>Fallback Action</label>
+			<config>
+					<type>input</type>
+					<eval>trim</eval>
+					<checkbox></checkbox>
+					<size>100</size>
+				</config>
+		  	</TCEforms>
+		  </settings.flexform.dynamiccontent.fallback> 
+
+	    </el>
+	  </ROOT>
+    </settings.flexform.dynamiccontent>
+  </sheets>
+</T3DataStructure>

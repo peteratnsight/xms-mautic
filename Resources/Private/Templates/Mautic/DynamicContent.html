@@ -1,0 +1,83 @@
+<f:layout name="Ajax" />
+
+<f:section name="main">
+<f:format.raw>{content}</f:format.raw>
+</f:section>
+
+
+<f:section name="_old">
+<div id="dynamicContentLoader" objId="{cobj_uid}"></div>
+<script type="text/javascript">
+jQuery(document).ready(function($){
+
+$.fn.getContent = function(){
+    var elem=$(this);
+    var thisid = elem.attr('id');
+    var cObj = elem.attr('objId');
+    var murl = "https://marketing.kongressmedia.de/context/request/ident";
+    var ident = 0;
+
+    $.ajax({
+	url: murl + '?callback=?',
+	async: false,
+	dataType: 'json',
+	success: function(json) {
+		var contenturl = "/xm/dynamiccontent/" + cObj + "/" + json.hash + "/mcaller.html";
+		$.get(contenturl, function(response) {
+  			$("#dynamicContentLoader").html(response);
+		}).done(function() {
+    		  $('a[target=_modalBox]').on('click',execModalDialogInstance);
+		  if ( $('.assetLink')[0] ) {
+			var asseturl = $('.assetLink').attr('href').replace("/showitem", "/" + json.hash + "/showitem");
+			$('.assetLink').attr('href', asseturl);
+		}
+
+		});
+		
+	}
+    });
+
+		
+    return false;
+}; 
+
+$("#dynamicContentLoader").getContent(); 
+
+function execModalDialogInstance(e) {
+     e.preventDefault();
+
+     var title = $(this).attr('data-title') || $(this).attr('title');
+
+     var vid = $(this).attr('vid') || "novid"; // #player
+     var src = $(this).attr('href') || "http://www.kongressmedia.de";
+
+     if(vid!="novid") src = "http://www.youtube.com/embed/' + vid + '?rel=0&autoplay=1";
+
+     var height = $(this).attr('data-height') || 600;
+     var width = $(this).attr('data-width') || 800;
+
+     var iframeBox = $( "<iframe id='modal-iframe' frameborder='0'></iframe>" );
+     iframeBox.attr({
+		src: src,
+		height: height,
+		width: '100%'
+	});
+
+     BootstrapDialog.show({
+	    size: BootstrapDialog.SIZE_LARGE,
+	    title: title,
+            message: $('<div></div>').append( iframeBox ),
+	    buttons: [{
+                label: 'Close',
+                action: function(dialogItself){
+                    dialogItself.close();
+                }
+            }]
+        });
+
+}; 
+
+$('a[target=_modalBox]').on('click',execModalDialogInstance);
+
+});
+</script></f:section>
